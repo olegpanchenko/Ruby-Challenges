@@ -3,7 +3,7 @@ class DictionarySearch
     words = {}
     @pairs = []
     File.open(file_path, "r").each_line do |word|
-      word.gsub!(/\r\n?/, "")
+      word.chomp!
       next if word.size < 3
 
       transformed = transform(word)
